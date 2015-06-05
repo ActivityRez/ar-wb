@@ -1,0 +1,168 @@
+@mixin vendor-prefix($name, $argument) {
+	-webkit-#{$name}: #{$argument};
+	-ms-#{$name}: #{$argument};
+	-moz-#{$name}: #{$argument};
+	-o-#{$name}: #{$argument};
+	#{$name}: #{$argument};
+}
+
+
+@mixin gradient($color1: #fff, $color2: #ededed, $stop1:0%, $stop2: 100%, $direction: down){
+	$startpos: top;
+	$endpos: bottom;
+	
+	@if $direction == down {
+	    $startpos: top;
+		$endpos: bottom;
+	}
+	@if $direction == up {
+	    $startpos: bottom;
+		$endpos: top;
+	}
+	@if $direction == left {
+	    $startpos: right;
+		$endpos: left;
+	}
+	@if $direction == right {
+	    $startpos: left;
+		$endpos: right;
+	}
+	background-image: -webkit-gradient(linear, $startpos, $endpos, color-stop($stop1, $color1), color-stop($stop2, $color2));
+	background-image: -webkit-linear-gradient($startpos, $color1 $stop1, $color2 $stop2);
+	background-image: -moz-linear-gradient($startpos, $color1 $stop1, $color2 $stop2);
+	background-image: -ms-linear-gradient($startpos, $color1 $stop1, $color2 $stop2);
+	background-image: -o-linear-gradient($startpos, $color1 $stop1, $color2 $stop2);
+	background-image: linear-gradient(to $endpos, $color1 $stop1, $color2 $stop2);
+}
+
+@mixin candystripe($color: $secondary, $alpha: 0.2, $animate: true){
+	content: "";
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba($color, $alpha)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba($color, $alpha)), color-stop(.75, rgba($color, $alpha)), color-stop(.75, transparent), to(transparent));
+	background-image: -webkit-linear-gradient(-45deg, rgba($color, $alpha) 25%, transparent 25%, transparent 50%, rgba($color, $alpha) 50%, rgba($color, $alpha) 75%, transparent 75%, transparent);
+	background-image: -moz-linear-gradient(-45deg, rgba($color, $alpha) 25%, transparent 25%, transparent 50%, rgba($color, $alpha) 50%, rgba($color, $alpha) 75%, transparent 75%, transparent);
+	background-image: -ms-linear-gradient(-45deg, rgba($color, $alpha) 25%, transparent 25%, transparent 50%, rgba($color, $alpha) 50%, rgba($color, $alpha) 75%, transparent 75%, transparent);
+	background-image: -o-linear-gradient(-45deg, rgba($color, $alpha) 25%, transparent 25%, transparent 50%, rgba($color, $alpha) 50%, rgba($color, $alpha) 75%, transparent 75%, transparent 	   );
+	z-index: 1;
+	background-size: 50px 50px;
+	@if $animate == true{
+		@include vendor-prefix(animation, moveStripe 2s linear infinite);
+	}
+	overflow: hidden;
+}
+
+@-moz-keyframes moveStripe {
+	0% {
+       background-position: 0 0;
+    }
+    100% {
+       background-position: 50px 50px;
+    }
+}
+
+@-webkit-keyframes moveStripe {
+	0% {
+       background-position: 0 0;
+    }
+    100% {
+       background-position: 50px 50px;
+    }
+}
+
+@-ms-keyframes moveStripe {
+	0% {
+       background-position: 0 0;
+    }
+    100% {
+       background-position: 50px 50px;
+    }
+}
+
+@-o-keyframes moveStripe {
+	0% {
+       background-position: 0 0;
+    }
+    100% {
+       background-position: 50px 50px;
+    }
+}
+
+@keyframes moveStripe {
+	0% {
+       background-position: 0 0;
+    }
+    100% {
+       background-position: 50px 50px;
+    }
+}
+
+@-moz-keyframes throbBG {
+	0% {
+       background: $alert;
+    }
+    
+    50%{
+	    background: adjust-hue($alert, 10%);
+    }
+    
+    100% {
+       background: $alert;
+    }
+}
+
+@-webkit-keyframes throbBG {
+	0% {
+       background: $alert;
+    }
+    
+    50%{
+	    background: adjust-hue($alert, 10%);
+    }
+    
+    100% {
+       background: $alert;
+    }
+}
+
+@-ms-keyframes throbBG {
+	0% {
+       background: $alert;
+    }
+    
+    50%{
+	    background: adjust-hue($alert, 10%);
+    }
+    
+    100% {
+       background: $alert;
+    }
+}
+
+@-o-keyframes throbBG {
+	0% {
+       background: $alert;
+    }
+    
+    50%{
+	    background: adjust-hue($alert, 10%);
+    }
+    
+    100% {
+       background: $alert;
+    }
+}
+
+@keyframes throbBG {
+	0% {
+       background: $alert;
+    }
+    
+    50%{
+	    background: adjust-hue($alert, 10%);
+    }
+    
+    100% {
+       background: $alert;
+    }
+}
