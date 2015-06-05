@@ -111,7 +111,7 @@ global $wb;
 				<h2><?php _e('Travel Agent Signup','arez'); ?></h2>
 			</div>
 			<form id="signup-form" data-bind="with: WebBooker.Agent">
-				<div class="blurb"><?php _e('Are you a travel agent and sell stuff online? then sign up! This is Photoshop\'s version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.', 'arez'); ?></div>
+				<div class="blurb"><?php _e('Would you like to earn commission for referring sales to us? Sign up below to get started.', 'arez'); ?></div>
 				<div class="left-side">
 					<div class="required-wrapper">
 						<input type="text" data-bind="value: signup_fields.first_name, css: {required: !signup_fields.first_name()}" placeholder="<?php _e('First Name','arez'); ?>" />
