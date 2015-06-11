@@ -39,6 +39,7 @@
 			</div>
 		</div>
 		<div class="container">
+			<div id="pb_arez">Powered By <a href="https://www.activityrez.com/?utm_source=booking+engine&utm_medium=referral&utm_campaign=powered+by">ActivityRez</a></div>
 			<?php if(get_theme_mod('company_legal_setting')){ ?>
 				<div id="legal"><?php echo get_theme_mod('company_legal_setting'); ?></div>
 			<?php } ?>

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: ActivityRez for Resellers Booking Engine Theme
 Theme URI: 
@@ -65,7 +66,7 @@ Text Domain: activityrez
 /* LOADER */
 .bx-wrapper .bx-loading {
   min-height: 50px;
-  background: url(js/jquery.bxslider/images/bx_loader.gif) center center no-repeat white;
+  background: url(js/jquery.bxslider/images/bx_loader.gif) center center no-repeat #fff;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -176,7 +177,7 @@ Text Domain: activityrez
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #666666 \9;
+  background: #666 \9;
   background: rgba(80, 80, 80, 0.75);
   width: 100%; }
 
@@ -190,76 +191,61 @@ Text Domain: activityrez
 @-moz-keyframes moveStripe {
   0% {
     background-position: 0 0; }
-
   100% {
     background-position: 50px 50px; } }
 @-webkit-keyframes moveStripe {
   0% {
     background-position: 0 0; }
-
   100% {
     background-position: 50px 50px; } }
 @-ms-keyframes moveStripe {
   0% {
     background-position: 0 0; }
-
   100% {
     background-position: 50px 50px; } }
 @-o-keyframes moveStripe {
   0% {
     background-position: 0 0; }
-
   100% {
     background-position: 50px 50px; } }
 @keyframes moveStripe {
   0% {
     background-position: 0 0; }
-
   100% {
     background-position: 50px 50px; } }
 @-moz-keyframes throbBG {
   0% {
     background: #d32800; }
-
   50% {
     background: #d34b00; }
-
   100% {
     background: #d32800; } }
 @-webkit-keyframes throbBG {
   0% {
     background: #d32800; }
-
   50% {
     background: #d34b00; }
-
   100% {
     background: #d32800; } }
 @-ms-keyframes throbBG {
   0% {
     background: #d32800; }
-
   50% {
     background: #d34b00; }
-
   100% {
     background: #d32800; } }
 @-o-keyframes throbBG {
   0% {
     background: #d32800; }
-
   50% {
     background: #d34b00; }
-
   100% {
     background: #d32800; } }
 @keyframes throbBG {
   0% {
     background: #d32800; }
-
   50% {
     background: #d34b00; }
-
   100% {
     background: #d32800; } }
 .bx-wrapper {
@@ -314,19 +300,19 @@ select {
   font-family: 'Source Sans Pro', sans-serif;
   background: #ffffff;
   /* Old browsers */
-  background: url(images/select-arrow-gray.png), -moz-linear-gradient(top, white 0%, #f1f1f1 100%);
+  background: url(images/select-arrow-gray.png), -moz-linear-gradient(top, #ffffff 0%, #f1f1f1 100%);
   /* FF3.6+ */
-  background: url(images/select-arrow-gray.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f1f1f1));
+  background: url(images/select-arrow-gray.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f1f1f1));
   /* Chrome,Safari4+ */
-  background: url(images/select-arrow-gray.png), -webkit-linear-gradient(top, white 0%, #f1f1f1 100%);
+  background: url(images/select-arrow-gray.png), -webkit-linear-gradient(top, #ffffff 0%, #f1f1f1 100%);
   /* Chrome10+,Safari5.1+ */
-  background: url(images/select-arrow-gray.png), -o-linear-gradient(top, white 0%, #f1f1f1 100%);
+  background: url(images/select-arrow-gray.png), -o-linear-gradient(top, #ffffff 0%, #f1f1f1 100%);
   /* Opera 11.10+ */
-  background: url(images/select-arrow-gray.png), -ms-linear-gradient(top, white 0%, #f1f1f1 100%);
+  background: url(images/select-arrow-gray.png), -ms-linear-gradient(top, #ffffff 0%, #f1f1f1 100%);
   /* IE10+ */
-  background: url(images/select-arrow-gray.png), linear-gradient(to bottom, white 0%, #f1f1f1 100%);
+  background: url(images/select-arrow-gray.png), linear-gradient(to bottom, #ffffff 0%, #f1f1f1 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f1f1f1',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f1f1f1',GradientType=0 );
   /* IE6-9 */
   background-repeat: no-repeat;
   background-position: -50px -50px;
@@ -357,7 +343,7 @@ select {
     -moz-appearance: none;
     text-indent: 0.01px;
     text-overflow: "";
-    background: linear-gradient(to bottom, white 0%, #f1f1f1 100%);
+    background: linear-gradient(to bottom, #FFF 0%, #F1F1F1 100%);
     padding: 2px 5px 3px;
     /* hides the dotted outline on focus in FF (See SO#3773430) */ }
     select:-moz-focusring {
@@ -613,7 +599,7 @@ button:disabled, button[disabled="disable"], button[disabled="true"] {
       border-left: 6px solid #d32800;
       background: rgba(211, 40, 0, 0.05); }
     .notifications > div.success {
-      border-left: 6px solid #20b420;
+      border-left: 6px solid #20B420;
       background: rgba(32, 180, 32, 0.05); }
     .notifications > div.active {
       height: 58px; }
@@ -1010,7 +996,8 @@ button:disabled, button[disabled="disable"], button[disabled="true"] {
         #header #toolbar #multi-everything > div#curr-picker {
           margin: 0; }
     #header #toolbar #header-cart {
-      float: left; }
+      float: left;
+      margin-right: 10px; }
       #header #toolbar #header-cart a {
         background: url(images/header-cart.png) 0 no-repeat;
         padding-left: 18px;
@@ -1080,12 +1067,12 @@ button:disabled, button[disabled="disable"], button[disabled="true"] {
               #header #main-header #menu > div[class^="menu"] ul li a:hover, #header #main-header #menu > div[class*=" menu"] ul li a:hover {
                 text-decoration: none; }
   #header #header-mini-search {
-    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, white), color-stop(100%, #f3f3f3));
-    background-image: -webkit-linear-gradient(top, white 0%, #f3f3f3 100%);
-    background-image: -moz-linear-gradient(top, white 0%, #f3f3f3 100%);
-    background-image: -ms-linear-gradient(top, white 0%, #f3f3f3 100%);
-    background-image: -o-linear-gradient(top, white 0%, #f3f3f3 100%);
-    background-image: linear-gradient(to bottom, white 0%, #f3f3f3 100%);
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #fff), color-stop(100%, #f3f3f3));
+    background-image: -webkit-linear-gradient(top, #fff 0%, #f3f3f3 100%);
+    background-image: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
+    background-image: -ms-linear-gradient(top, #fff 0%, #f3f3f3 100%);
+    background-image: -o-linear-gradient(top, #fff 0%, #f3f3f3 100%);
+    background-image: linear-gradient(to bottom, #fff 0%, #f3f3f3 100%);
     padding: 13px 0;
     margin-bottom: 35px;
     border-bottom: 2px solid #678631;
@@ -1236,12 +1223,12 @@ button:disabled, button[disabled="disable"], button[disabled="true"] {
         #webbooker-home #home-banner .container.search_wrap #home-main-search button:focus {
           outline: none; }
 #webbooker-home #quick-tags {
-  background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, white), color-stop(100%, #f3f3f3));
-  background-image: -webkit-linear-gradient(top, white 0%, #f3f3f3 100%);
-  background-image: -moz-linear-gradient(top, white 0%, #f3f3f3 100%);
-  background-image: -ms-linear-gradient(top, white 0%, #f3f3f3 100%);
-  background-image: -o-linear-gradient(top, white 0%, #f3f3f3 100%);
-  background-image: linear-gradient(to bottom, white 0%, #f3f3f3 100%);
+  background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #fff), color-stop(100%, #f3f3f3));
+  background-image: -webkit-linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background-image: -moz-linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background-image: -ms-linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background-image: -o-linear-gradient(top, #fff 0%, #f3f3f3 100%);
+  background-image: linear-gradient(to bottom, #fff 0%, #f3f3f3 100%);
   padding: 13px 0;
   border-bottom: 2px solid #678631;
   box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.35);
@@ -1290,7 +1277,6 @@ button:disabled, button[disabled="disable"], button[disabled="true"] {
       cursor: pointer;
       font-weight: 900;
       font-size: 2rem;
-      font-family: sans-serif;
       color: silver;
       -webkit-transition: color .5s ease;
       -ms-transition: color .5s ease;
@@ -1435,7 +1421,7 @@ button:disabled, button[disabled="disable"], button[disabled="true"] {
     font-weight: 600;
     font-size: 2.5rem; }
     #webbooker-home #social-proof .person:before {
-      content: "\2014"; }
+      content: "—"; }
 #webbooker-home #user-content {
   margin-top: 60px;
   margin-bottom: 60px; }
@@ -1467,9 +1453,8 @@ button:disabled, button[disabled="disable"], button[disabled="true"] {
       border-radius: 12px 12px 0 12px;
       margin-right: 2%; }
       #webbooker-search #webbooker-search-results .results .activity .activity-thumbnail img {
-        width: 100%;
-	height: 125px;
-	object-fit: cover; }
+        max-width: 100%;
+        min-height: 100%; }
     #webbooker-search #webbooker-search-results .results .activity .thumbnail-holder {
       width: 23%;
       height: 125px;
@@ -2320,7 +2305,7 @@ button:disabled, button[disabled="disable"], button[disabled="true"] {
           #webbooker-checkout #checkout-payment #credit-info fieldset .cc-number-holder .cc-valid-indicator.invalid {
             background: #d32800; }
           #webbooker-checkout #checkout-payment #credit-info fieldset .cc-number-holder .cc-valid-indicator.valid {
-            background: #20b420; }
+            background: #20B420; }
       #webbooker-checkout #checkout-payment #credit-info fieldset .required-wrapper.cc-number-holder .required-text {
         right: 70px; }
       #webbooker-checkout #checkout-payment #credit-info fieldset .required-wrapper.card-month {
@@ -2569,6 +2554,91 @@ button:disabled, button[disabled="disable"], button[disabled="true"] {
     cursor: pointer; }
     #webbooker-confirmation #payments button:focus {
       outline: none; }
+
+#webbooker-itinerary {
+  margin-bottom: 60px; }
+  #webbooker-itinerary #itinerary-header {
+    border-bottom: 1px solid #828282;
+    padding-bottom: 5px;
+    margin-bottom: 10px; }
+    #webbooker-itinerary #itinerary-header h2 {
+      float: left; }
+      #webbooker-itinerary #itinerary-header h2 span {
+        color: #cecece; }
+  #webbooker-itinerary #itinerary-retrieve {
+    margin-bottom: 20px; }
+    #webbooker-itinerary #itinerary-retrieve p {
+      margin-bottom: 20px; }
+    #webbooker-itinerary #itinerary-retrieve button {
+      background: #5674b9;
+      border: none;
+      font-size: 1.1em;
+      color: white;
+      font-weight: 600;
+      margin-left: 10px;
+      padding: 5px 12px;
+      cursor: pointer;
+      -webkit-transition: opacity .5s;
+      -ms-transition: opacity .5s;
+      -moz-transition: opacity .5s;
+      -o-transition: opacity .5s;
+      transition: opacity .5s; }
+  #webbooker-itinerary #itinerary-error {
+    border: 1px solid #d32800;
+    color: #d32800;
+    padding: 8px;
+    margin-top: 10px;
+    background: #ffb2a0; }
+  #webbooker-itinerary #reserved-activities {
+    width: 49%;
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 20px; }
+    #webbooker-itinerary #reserved-activities .activity .title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 5px; }
+    #webbooker-itinerary #reserved-activities .activity .date-time {
+      font-size: 1rem;
+      font-weight: 200;
+      color: #828282;
+      margin-bottom: 5px; }
+    #webbooker-itinerary #reserved-activities .activity .guests .guest {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 5px; }
+    #webbooker-itinerary #reserved-activities .activity .special-instructions {
+      color: #5674b9;
+      font-weight: 600;
+      font-size: .9rem; }
+  #webbooker-itinerary #itinerary-display {
+    width: 23%;
+    float: left; }
+    #webbooker-itinerary #itinerary-display .payments ul {
+      padding-left: 20px; }
+      #webbooker-itinerary #itinerary-display .payments ul li {
+        margin-bottom: 8px; }
+    #webbooker-itinerary #itinerary-display #lead-guest > div {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5; }
+      #webbooker-itinerary #itinerary-display #lead-guest > div > span {
+        display: inline-block; }
+        #webbooker-itinerary #itinerary-display #lead-guest > div > span:first-child {
+          width: 25%;
+          vertical-align: top; }
+        #webbooker-itinerary #itinerary-display #lead-guest > div > span:nth-child(2) {
+          color: #828282; }
+    #webbooker-itinerary #itinerary-display button {
+      width: 100%;
+      background: #678631;
+      padding: 8px 0;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer; }
+      #webbooker-itinerary #itinerary-display button:focus {
+        outline: none; }
 
 #webbooker-dashboard .header {
   border-bottom: 1px solid #828282;
@@ -2921,11 +2991,31 @@ button:disabled, button[disabled="disable"], button[disabled="true"] {
             background-position: -123px 0; }
           #footer .darken .footer-nav #footer-contact #footer-social .social-icon:hover {
             opacity: .7; }
+    #footer .darken #pb_arez {
+      color: white;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      top: -2px; }
+      #footer .darken #pb_arez a {
+        display: inline-block;
+        overflow: hidden;
+        background: url(images/arez_logo_footer.png) no-repeat;
+        height: 0;
+        width: 75px;
+        padding-top: 18px;
+        position: relative;
+        top: 4px; }
     #footer .darken #legal {
       color: white;
       font-weight: 300;
       font-size: .9em;
-      padding: 15px 0; }
+      padding: 15px 0;
+      margin-left: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      top: 2px; }
 
 @media (max-width: 979px) {
   .bx-controls {
@@ -3467,3 +3557,5 @@ button:disabled, button[disabled="disable"], button[disabled="true"] {
     text-align: center; }
     #footer .darken .footer-nav #footer-contact #footer-social {
       float: none; } }
+
+/*# sourceMappingURL=style.css.map */

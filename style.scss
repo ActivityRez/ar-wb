@@ -965,6 +965,7 @@ button{
 		
 		#header-cart{
 			float: left;
+			margin-right: 10px;
 			
 			a{
 				background: url(images/header-cart.png) 0 no-repeat;
@@ -2723,6 +2724,7 @@ button{
 			}
 		}
 	}
+	
 	#checkout-payment{
 		float: right;
 		width: 75%;
@@ -3202,6 +3204,136 @@ button{
 				
 				&:nth-child(2){
 					color: $gray;
+				}
+			}
+		}
+		
+		button{
+			width: 100%;
+			background: $secondary;
+			padding: 8px 0;
+			border: none;
+			color: white;
+			font-size: 1rem;
+			cursor: pointer;
+			
+			&:focus{
+				outline: none;
+			}
+		}
+	}
+}
+
+#webbooker-itinerary{
+	margin-bottom: 60px;
+	
+	#itinerary-header{
+		border-bottom: 1px solid $gray;
+		padding-bottom: 5px;
+		margin-bottom: 10px;
+		
+		h2{
+			float: left;
+			span{
+				color: lighten($gray, 30%);
+			}
+		}
+	}
+	
+	#itinerary-retrieve{
+		margin-bottom: 20px;;
+		
+		p{
+			margin-bottom: 20px;
+		}
+		
+		button{
+			  background: $primary;
+			  border: none;
+			  font-size: 1.1em;
+			  color: white;
+			  font-weight: 600;
+			  margin-left: 10px;
+			  padding: 5px 12px;
+			  cursor: pointer;
+			  @include vendor-prefix(transition, 'opacity .5s');
+		}
+	}
+	
+	#itinerary-error{
+		border: 1px solid $alert;
+		color: $alert;
+		padding: 8px;
+		margin-top: 10px;
+		background: lighten($alert, 40%);
+	}
+	
+	#reserved-activities{
+		width: 49%;
+		float: left;
+		margin-right: 2%;
+		margin-bottom: 20px;
+		
+		.activity{
+			.title{
+				font-size: 1.1rem;
+				font-weight: 600;
+				margin-bottom: 5px;
+			}
+			
+			.date-time{
+				font-size: 1rem;
+				font-weight: 200;
+				color: $gray;
+				margin-bottom: 5px;
+			}
+			
+			.guests{
+				.guest{
+					font-size: 1rem;
+					font-weight: 600;
+					margin-bottom: 5px;
+				}
+			}
+			
+			.special-instructions{
+				color: $primary;
+				font-weight: 600;
+				font-size: .9rem;
+			}
+		}
+	}
+	#itinerary-display{
+		width: 23%;
+		float: left;
+		
+		.payments{
+			ul{
+				padding-left: 20px;
+				
+				li{
+					margin-bottom: 8px;
+				}
+			}
+		}
+		
+		#lead-guest{
+			> div{
+				font-size: 1rem;
+				font-weight: 600;
+				line-height: 1.5;
+				
+				> span{
+					display: inline-block;
+					
+					&:first-child{
+						width: 25%;
+						vertical-align: top;
+					}
+					
+					&:nth-child(2){
+						color: $gray;
+					}
 				}
 			}
 		}
@@ -3760,11 +3892,35 @@ button{
 			}
 		}
 		
+		#pb_arez{
+			color: white;
+			display: inline-block;
+			vertical-align: middle;
+			position: relative;
+			top: -2px;
+			
+			a{
+				display: inline-block;
+				overflow: hidden;
+				background: url(images/arez_logo_footer.png) no-repeat;
+				height: 0;
+				width: 75px;
+				padding-top: 18px;
+				position: relative;
+				top: 4px;
+			}
+		}
+		
 		#legal{
 			color: white;
 			font-weight: 300;
 			font-size: .9em;
 			padding: 15px 0;
+			margin-left: 10px;
+			display: inline-block;
+			vertical-align: middle;
+			position: relative;
+			top: 2px;
 		}
 	}
 }

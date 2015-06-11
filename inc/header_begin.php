@@ -14,7 +14,7 @@
 					</div>
 				</div>
 				<div id="header-cart" data-bind="with: WebBooker.Cart">
-					<a data-bind="money: WebBooker.Cart.subtotal()" href="/wb/<?php echo $wb['name']; ?>/#/Checkout"></a>
+					<a data-bind="money: WebBooker.Cart.subtotal()" href="<?php echo $wb['wb_url']; ?>/#/Checkout"></a>
 				</div>
 				<div id="header-login" data-bind="with: WebBooker.Agent">
 					<!-- ko if: !user_id() || user_id() == 0 -->
