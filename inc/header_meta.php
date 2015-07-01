@@ -7,7 +7,11 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <title><?php wp_title( ' | ', true, 'right' ); ?></title>
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
-<?php wp_head(); ?>
+<?php if(!wp_script_is( 'jquery', 'enqueued')){
+		wp_enqueue_script('jquery');
+	}
+	
+	wp_head(); ?>
 <script>
 	jQuery(document).ready(function(){
 		jQuery('#page-loading').hide();

@@ -101,14 +101,17 @@ function blankslate_setup(){
 
 add_action('wp_enqueue_scripts', 'blankslate_load_scripts', 100);
 function blankslate_load_scripts(){
-    wp_enqueue_script('jquery');
+    //wp_enqueue_script('jquery');
     
-	if(!wp_script_is('ar-webbooker', 'enqueued')){
-	    	//wp_enqueue_script('ar-webbooker',ACTIVITYREZWB_PLUGIN_PATH.'js/app/webbooker.min.js',array('jquery','jquery-ui-datepicker'));
+	//if(!wp_script_is('ar-webbooker', 'enqueued'))
+	//    	wp_enqueue_script('ar-webbooker',ACTIVITYREZWB_PLUGIN_PATH.'js/app/webbooker.min.js',array('jquery','jquery-ui-datepicker'));
+    if(is_page_template('page-templates/cats.php')){
+		wp_enqueue_script('kojs', '//cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js');
+		wp_enqueue_script('ar-core', get_template_directory_uri() . '/js/ar-core.js');
+	}else{
+		wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js');
 	}
-
-    wp_enqueue_script('main-ar', get_stylesheet_directory_uri() . '/js/main.js');
-    wp_enqueue_script('bx-slider', get_stylesheet_directory_uri() . '/js/jquery.bxslider/jquery.bxslider.min.js');
+    wp_enqueue_script('bx-slider', get_template_directory_uri() . '/js/jquery.bxslider/jquery.bxslider.min.js');
     //wp_enqueue_script('gmaps', "https://maps.google.com/maps/api/js?sensor=true&ver=3.9");
     wp_deregister_style('ar-vendor');
     wp_deregister_style('ar');
@@ -198,7 +201,7 @@ function arez_customize_register($wp_customize){
     )));
     
     $wp_customize->add_setting('logo', array(
-        'default' => get_stylesheet_directory_uri() . '/wp-content/themes/ActivityRez/images/logo.png',
+        'default' => get_template_directory_uri() . '/wp-content/themes/ActivityRez/images/logo.png',
         'transport' => 'refresh'
     ));
     
@@ -219,7 +222,7 @@ function arez_customize_register($wp_customize){
     ));
     
     $wp_customize->add_setting('social_proof_image', array(
-        'default' => get_stylesheet_directory_uri() . '/wp-content/themes/ActivityRez/images/social-proof-default.jpg',
+        'default' => get_template_directory_uri() . '/wp-content/themes/ActivityRez/images/social-proof-default.jpg',
         'transport' => 'refresh'
     ));
     
@@ -341,7 +344,7 @@ function arez_customize_register($wp_customize){
     $banner_images = 3;
     for ($i = 0; $i < $banner_images; $i++) {
         $wp_customize->add_setting('banner_image_' . $i, array(
-            'default' => get_stylesheet_directory_uri() . '/wp-content/themes/ActivityRez/images/banner.jpg',
+            'default' => get_template_directory_uri() . '/wp-content/themes/ActivityRez/images/banner.jpg',
             'transport' => 'refresh'
         ));
         
@@ -510,7 +513,7 @@ function arez_customize_css_more(){
 			
 			<?php if( (strpos($browser['name'], 'Chrome') != false && $browser['version'] >= '35') || (strpos($browser['name'], 'Firefox') != false && $browser['version'] >= '31')){ ?>
 				#webbooker-home #social-proof, #webbooker-activity #webbooker-activity-media, #webbooker-confirmation #congratulations{
-					background-image: url(<?php echo get_stylesheet_directory_uri() ?>/images/wood-pattern.jpg);
+					background-image: url(<?php echo get_template_directory_uri() ?>/images/wood-pattern.jpg);
 					background-blend-mode: color-burn;
 				}
 			<?php } ?>
