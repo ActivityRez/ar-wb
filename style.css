@@ -2992,6 +2992,7 @@ button:disabled, button[disabled="disable"], button[disabled="true"] {
           #footer .darken .footer-nav #footer-contact #footer-social .social-icon:hover {
             opacity: .7; }
     #footer .darken #pb_arez {
+      padding: 15px 0;
       color: white;
       display: inline-block;
       vertical-align: middle;
