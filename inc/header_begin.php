@@ -5,31 +5,33 @@
 	<div id="header" role="banner">
 		<div id="toolbar">
 			<div class="container clearfix">
-				<div id="multi-everything" class="clearfix">
-					<div id="lang-picker" data-bind="if: WebBooker.available_langs().length > 1">
-						<select data-bind="options: WebBooker.available_langs,optionsCaption:'<?php _e('Language','arez'); ?>',value:WebBooker.selectedLanguage,optionsText: 'title'"></select>
+				<?php if(!is_page_template('page-templates/cats.php')){ ?>
+					<div id="multi-everything" class="clearfix">
+						<div id="lang-picker" data-bind="if: WebBooker.available_langs().length > 1">
+							<select data-bind="options: WebBooker.available_langs,optionsCaption:'<?php _e('Language','arez'); ?>',value:WebBooker.selectedLanguage,optionsText: 'title'"></select>
+						</div>
+						<div id="curr-picker" data-bind="if: WebBooker.available_currencies().length > 1">
+							<select data-bind="options: WebBooker.available_currencies, optionsCaption:'<?php _e('Currency','arez'); ?>', value: WebBooker.selectedCurrency, optionsText: 'symbol'"></select>
+						</div>
 					</div>
-					<div id="curr-picker" data-bind="if: WebBooker.available_currencies().length > 1">
-						<select data-bind="options: WebBooker.available_currencies, optionsCaption:'<?php _e('Currency','arez'); ?>', value: WebBooker.selectedCurrency, optionsText: 'symbol'"></select>
+					<div id="header-cart" data-bind="with: WebBooker.Cart">
+						<a data-bind="money: WebBooker.Cart.subtotal()" href="<?php echo $wb['wb_url']; ?>/#/Checkout"></a>
 					</div>
-				</div>
-				<div id="header-cart" data-bind="with: WebBooker.Cart">
-					<a data-bind="money: WebBooker.Cart.subtotal()" href="<?php echo $wb['wb_url']; ?>/#/Checkout"></a>
-				</div>
-				<div id="header-login" data-bind="with: WebBooker.Agent">
-					<!-- ko if: !user_id() || user_id() == 0 -->
-					<a href="<?php echo $wb['wb_url']; ?>/#/Dashboard/signup"><?php _e('Sign Up','arez'); ?></a>
-					<form data-bind="submit: login">
-						<label><?php _e('Login','arez'); ?></label>
-						<input type="text" placeholder="<?php _e('Username','arez'); ?>" autocorrect="off" autocapitalize="off" data-bind="value: email" />
-						<input type="password" autocomplete="off" placeholder="<?php _e('Password','arez'); ?>" data-bind="value: password" />
-						<input class="hidden-submit" type="submit" />
-					</form>
-					<!-- /ko -->
-					<!-- ko if: user_id() > 0 -->
-					<div class="user-logged-in" data-bind="click: function(){window.location = '<?php echo $wb['wb_url']; ?>/#/Dashboard'}"><?php _e('Welcome back', 'arez'); ?> <span data-bind="text: name"></span>!</div>
-					<!-- /ko -->
-				</div>
+					<div id="header-login" data-bind="with: WebBooker.Agent">
+						<!-- ko if: !user_id() || user_id() == 0 -->
+						<a href="<?php echo $wb['wb_url']; ?>/#/Dashboard/signup"><?php _e('Sign Up','arez'); ?></a>
+						<form data-bind="submit: login">
+							<label><?php _e('Login','arez'); ?></label>
+							<input type="text" placeholder="<?php _e('Username','arez'); ?>" autocorrect="off" autocapitalize="off" data-bind="value: email" />
+							<input type="password" autocomplete="off" placeholder="<?php _e('Password','arez'); ?>" data-bind="value: password" />
+							<input class="hidden-submit" type="submit" />
+						</form>
+						<!-- /ko -->
+						<!-- ko if: user_id() > 0 -->
+						<div class="user-logged-in" data-bind="click: function(){window.location = '<?php echo $wb['wb_url']; ?>/#/Dashboard'}"><?php _e('Welcome back', 'arez'); ?> <span data-bind="text: name"></span>!</div>
+						<!-- /ko -->
+					</div>
+				<?php } ?>
 			</div>
 		</div>
 		<div id="main-header" class="container clearfix">
@@ -44,13 +46,15 @@
 			</div>
 			<div id="menu" role="navigation">
 				<div id="header-search">
-					<?php get_search_form(); ?>
+					<?php if(!is_page_template('page-templates/cats.php')){
+						get_search_form();
+					} ?>
 				</div>
 				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 			</div>
 		</div>
 		<?php
-			if(!is_front_page())
+			if(!is_front_page() && !is_page_template('page-templates/cats.php'))
 				require_once('wp-content/themes/ActivityRez/inc/header_search.php');
 		?>
 		<script>
