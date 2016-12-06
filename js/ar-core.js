@@ -1863,8 +1863,8 @@ $ar.config({
     cache_key: 'ACTIVITYREZ',
 	children: true,
     //search
-    pos: 0,
-    url: '',
+	pos: 114568,
+	url: 'http://chris.activitydirect.com/cms/wb/digital-medium',
     timthumb:'https://media1.activityrez.com/images/',
     thumbnailHeight: 400
 });
