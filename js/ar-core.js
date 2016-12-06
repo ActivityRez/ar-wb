@@ -1565,6 +1565,7 @@ $ar.models.register('activity',function(data){
 			for(ni = 0; ni < _data.prices.length; ni++) {
 				if (_data.prices[ni].type_id == 673991 || _data.prices[ni].type.includes("child") || _data.prices[ni].type.includes("Child")) {
 					_data.child_price = _data.prices[ni].amount;
+					break;
 				}
 			}
 		}
