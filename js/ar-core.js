@@ -1529,7 +1529,8 @@ $ar.models.register('activity',function(data){
 		r2: 0,
 		times: [],
 		thumbnail_url: '',
-		display_price: 0
+		display_price: 0,
+		child_price: 0
 	}).type({
 		prices: $ar.models.reference('price')
 	}).watch({
@@ -1561,6 +1562,11 @@ $ar.models.register('activity',function(data){
 					out = _data.prices[ni].amount;
 			}
 			_data.display_price = out;
+			for(ni = 0; ni < _data.prices.length; ni++) {
+				if (_data.prices[ni].type_id == 673991 || _data.prices[ni].type.includes("child") || _data.prices[ni].type.includes("Child")) {
+					_data.child_price = _data.prices[ni].amount;
+				}
+			}
 		}
 
 		if(_data.json_input && _data.json_input.media){
@@ -1632,6 +1638,7 @@ $ar.models.register('activity',function(data){
 	var conf = $ar.config();
 	data.data = data.data||{};
 	data.data.showInWB = conf['pos'];
+	data.data.showChildren = conf['children'];
 	data.data.reseller2ID = conf['r2']||0;
 	data.data.reseller2_userID = conf['user']||0;
 	return true;
@@ -1661,6 +1668,7 @@ $ar.models.register('activity_search',(function(){
 			tags: [],
 			moods: [],
 			sorts: [],
+			showChildren: true,
 			
 			start_date: null,
 			end_date: null,
@@ -1852,10 +1860,10 @@ $ar.config({
     //api
     api: 'https://secure.activityrez.com/wp-content/plugins/flash-api/wsrv.php',
     cache_key: 'ACTIVITYREZ',
-
+	children: true,
     //search
-    pos: 114568,
-    url: 'http://chris.activitydirect.com/cms/wb/digital-medium',
+    pos: 0,
+    url: '',
     timthumb:'https://media1.activityrez.com/images/',
     thumbnailHeight: 400
 });
